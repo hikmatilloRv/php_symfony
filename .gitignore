@@ -10,3 +10,10 @@
 /.idea
 ###< symfony/framework-bundle ###
 
+# Node.js dependencies
+/node_modules/
+
+# PHP dependencies lock file
+/composer.lock
+
+

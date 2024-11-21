@@ -32,7 +32,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     normalizationContext: ['groups' => ['user:read']],
     denormalizationContext: ['groups' => ['user:write']]
 )]
-#[UniqueEntity('email', message: 'This email {{ value }} is already taken.')]
+// #[UniqueEntity('email', message: 'This email {{ value }} is already taken.')]
 #[ApiFilter(SearchFilter::class, properties: [
     'id' => 'exact',
     'email' => 'exact',
@@ -89,11 +89,11 @@ class User implements PasswordAuthenticatedUserInterface
     private ?string $phone = null;
 
     #[ORM\Column]
-    #[Groups(['user:read', 'user:write'])]
+    #[Groups(['user:read'])]
     private array $roles = ['ROLE_USER'];
 
     #[ORM\Column]
-    #[Groups(['user:read', 'user:write'])]
+    #[Groups(['user:read'])]
     private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int

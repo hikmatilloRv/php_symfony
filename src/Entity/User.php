@@ -11,7 +11,9 @@ use ApiPlatform\Metadata\Delete;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
+use App\Component\User\DTO\UserFullNameDto;
 use App\Controller\UserCreateAction;
+use App\Controller\UserFullNameAction;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -26,6 +28,12 @@ use Symfony\Component\Validator\Constraints as Assert;
             uriTemplate: 'users/create-user',
             controller: UserCreateAction::class,
             name: 'createUser'
+        ),
+        new Post(
+            uriTemplate: 'users/full-name',
+            controller: UserFullNameAction::class,
+            input: UserFullNameDto::class,
+            name: 'fullName'
         ),
         new Get(),
         new Delete()

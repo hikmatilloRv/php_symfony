@@ -1,8 +1,16 @@
 api_platform:
     title: Book project API
     version: 1.0.0
+    formats:
+        jsonld: [ 'application/ld+json' ]
+        json: ['application/json']
     defaults:
         stateless: true
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
     use_symfony_listeners: true
+    swagger:
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header

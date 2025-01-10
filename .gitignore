@@ -1,5 +1,6 @@
 
 ###> symfony/framework-bundle ###
+/.env.*
 /.env.local
 /.env.local.php
 /.env.*.local
@@ -20,4 +21,5 @@
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
+/config/packages/lexik_jwt_authentication.yaml
 ###< lexik/jwt-authentication-bundle ###
